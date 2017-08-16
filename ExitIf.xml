@@ -1,0 +1,43 @@
+<ServerManagerConfiguration>
+  <ProxyGroup name="filters">
+   <SourceProxy name="Exit_Node" class="vtkExitIf" label="Exit (Nodes)">
+     <Documentation
+        long_help="Leave paraview"
+        short_help="Leave paraview">
+        Close paraview if a condition is not verified.
+     </Documentation>
+
+     <InputProperty
+        name="DataSet1"
+        command="SetInputConnection"
+        port_index="0">
+           <ProxyGroupDomain name="groups">
+             <Group name="sources"/>
+             <Group name="filters"/>
+           </ProxyGroupDomain>
+           <DataTypeDomain name="input_type">
+             <DataType value="vtkDataSet"/>
+           </DataTypeDomain>
+      </InputProperty>
+
+     <InputProperty
+        name="DataSet2"
+        command="SetInputConnection"
+        port_index="1">
+           <ProxyGroupDomain name="groups">
+             <Group name="sources"/>
+             <Group name="filters"/>
+           </ProxyGroupDomain>
+           <DataTypeDomain name="input_type">
+             <DataType value="vtkDataSet"/>
+           </DataTypeDomain>
+      </InputProperty>
+
+      <Hints>
+          <ShowInMenu category="Extensions" />
+      </Hints>
+
+   </SourceProxy>
+ </ProxyGroup>
+</ServerManagerConfiguration>
+
